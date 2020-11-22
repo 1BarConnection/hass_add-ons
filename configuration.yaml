@@ -1,0 +1,26 @@
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Light
+light:
+  - platform: mqtt
+    name: "Light"
+    command_topic: "inLight"
+    state_topic: "inLight"
+    payload_on: "0"
+    payload_off: "1"
+    retain: true
+
+mqtt:
+  broker: core-mosquitto
+  username: hass
+  password: geshoMierie7aikoo5xaejoHeLahPhae4eipaemoh0yahzoj1diethaeYahghaer
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
